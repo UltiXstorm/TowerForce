@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 id="introduction">Introduction</h1>
+<p>Ce Tower Defense a été conçu et développé dans le cadre de l'UE <strong>&quot;LIFAP4 : Conception et développement d'applications&quot;</strong> lors du semestre de printemps 2018 à l'Université Lyon 1 Claude Bernard par les étudiants <em>CORAZZA Charlotte</em> (p1508644), <em>TREME Guillaume</em> (p1507711) et <em>MARTIN Gaulthier</em> (p1508579).</p>
+<p>Pour l'affichage graphique, nous avons utilisé la <strong>bibliothèque graphique SFML</strong> que vous pouvez retrouver ici : https://www.sfml-dev.org/index-fr.php. Si vous êtes sur une distribution Unix vous pouvez l'installer avec la commande &quot;sudo apt-get install libsfml-dev&quot;.</p>
+<h2 id="configuration-linux">Configuration Linux</h2>
+<p>Pour jouer, il vous suffit de lancer la commande &quot;make lancer&quot; dans un terminal ou de double-cliquer sur l'executable TowerForce contenu dans le dossier ./bin. La commande &quot;make lancer&quot; effectue une compilation complète des fichiers puis lance automatiquement l'exécutable.</p>
+<h2 id="configuration-windows-64-bits-uniquement">Configuration Windows (64 bits uniquement)</h2>
+<p>Il vous suffit de double-cliquer sur l'exécutable TowerForce dans le dossier ./x64 pour lancer une partie. Pour la compilation : ouvrir le fichier TowerForce.sln avec Visual Studio 2015. Ne pas oublier de recopier les dll du répertoire ./SFML-2.4.2/bin dans le répertoire de l'exécutable Windows (./x64).</p>
+<p>Nous vous souhaitons du bon temps sur notre application.</p>
+<p>N'en laissez passer aucun et bon jeu !</p>
+<h1 id="didacticiel-de-jeu">Didacticiel de jeu</h1>
+<p>Vous trouverez ici toutes les informations vous permettant de savoir jouer ! Tout d'abord, en lançant une partie, vous aurez 15 secondes pour placer comme vous le souhaitez vos tours en fonction de votre quantité de pièces d'or de départ.</p>
+<p>Pour sélectionner une case sur la carte, mettez votre curseur sur celle-ci et faites un clic droit. Un carré coloré vous indiquera votre selection. Si cette case est valable, un menu d'achat s'affichera en bas de votre écran. Pour acheter, faites un clic gauche sur le bouton acheter. Vous ne pouvez poser une Tour que sur un terrain plat.</p>
+<p>Chaque Tour peut ensuite ếtre améliorée en Tour spécifique. Il y a trois catégories :</p>
+<ul>
+<li><p>Tour Snipe : elle a un grand rayon, fait énormément de dégats mais tire lentement.</p></li>
+<li><p>Tour Mitraillette : elle a un petit rayon, fait des dégats faible mais tir très vite.</p></li>
+<li><p>Tour T-Rex : elle a un rayon moyen, fait beaucoup de points de dégats et tir à vitesse moyenne.</p></li>
+</ul>
+<p>Chaque Tour pourra ensuite être améliorée avec des pièces d'or et un nombre d'ennemis tués.</p>
+<p>Un petit voyant sur la gauche de la tour indique que celle-ci peut être améliorée.</p>
+<p>Enfin pour les prix :</p>
+<ul>
+<li><p>Tour de départ : 50 pièces d'or</p></li>
+<li><p>Transformation de Tour : 25 pièces d'or</p></li>
+<li><p>Améliorations de Tour : le prix dépend du niveau actuel de la tour et est affiché dans le menu d'amélioration</p></li>
+</ul>
+<h1 id="contenu-de-larchive">Contenu de l'archive</h1>
+<p>Voici un récapitulatif de tout ce que vous pourrez trouver dans ce dossier. Les noms de dossier sont écrits en majuscule pour faciliter la compréhension.</p>
+<ul>
+<li>BIN
+<ul>
+<li>TowerForce (exécutable)</li>
+</ul></li>
+<li>DATA
+<ul>
+<li>ICONS
+<ul>
+<li>towerforce.ico</li>
+<li>towerforce.png</li>
+</ul></li>
+<li>MUSIQUE
+<ul>
+<li>Epic_Music.ogg</li>
+<li>Music_Achat.ogg</li>
+</ul></li>
+<li>NIVEAUX
+<ul>
+<li>niveau1.txt</li>
+<li>niveau2.txt</li>
+<li>niveau3.txt</li>
+</ul></li>
+<li>POLICE
+<ul>
+<li>emmasophia.ttf</li>
+</ul></li>
+<li>SPRITES
+<ul>
+<li>demon.png</li>
+<li>detraqueur.png</li>
+<li>dracaufeu.png</li>
+<li>dragon.png</li>
+<li>fond.jpg</li>
+<li>lvlUp.png</li>
+<li>plante_carnivore.png</li>
+<li>slime.png</li>
+<li>squelette.png</li>
+<li>squeletteChapeau.png</li>
+<li>terrainForet.png</li>
+<li>terrainNeige.png</li>
+<li>terrainVolcan.png</li>
+</ul></li>
+<li>VAGUES
+<ul>
+<li>niveau1.txt</li>
+<li>niveau2.txt</li>
+<li>niveau3.txt</li>
+</ul></li>
+</ul></li>
+<li>DOC
+<ul>
+<li>HTML
+<ul>
+<li>toute la documentation nécessaire à Doxygen</li>
+</ul></li>
+<li>image.doxy</li>
+</ul></li>
+<li>OBJ
+<ul>
+<li>Bouton.o</li>
+<li>Ennemi.o</li>
+<li>Graphisme.o</li>
+<li>Jeu.o</li>
+<li>main.o</li>
+<li>Message.o</li>
+<li>Point.o</li>
+<li>Tower.o</li>
+</ul></li>
+<li>SRC
+<ul>
+<li>CORE
+<ul>
+<li>Constantes.h</li>
+<li>Ennemi.cpp</li>
+<li>Ennemi.h</li>
+<li>Jeu.cpp</li>
+<li>Jeu.h</li>
+<li>Point.cpp</li>
+<li>Point.h</li>
+<li>Tower.cpp</li>
+<li>Tower.h</li>
+</ul></li>
+<li>SFML
+<ul>
+<li>Graphisme.cpp</li>
+<li>Graphisme.h</li>
+<li>Bouton.cpp</li>
+<li>Bouton.h</li>
+<li>Message.cpp</li>
+<li>Message.h</li>
+</ul></li>
+<li>TESTREGRESSION
+<ul>
+<li>testsClasse.cpp</li>
+</ul></li>
+<li>main.cpp</li>
+<li>towerforce.rc</li>
+</ul></li>
+<li>Makefile</li>
+<li>README.html</li>
+<li>README.md</li>
+<li>TowerForce.sln</li>
+<li>TowerForce.vcxproj</li>
+</ul>
+<h1 id="choix-de-conception">Choix de conception</h1>
+<h2 id="les-fichiers-de-niveau">Les fichiers de niveau</h2>
+<p>Nos différentes cartes de niveau sont éditées suivant un fichier texte avec un format particulier détaillé ici :</p>
+<ul>
+<li><p>Première ligne : coordonnées du point de départ du parcours X puis Y</p></li>
+<li><p>15 lignes suivantes : détaille de la matrice génératrice d'affichage grâce à des numéros. Chaque chiffre correspond à une tuile particulier à afficher. Par exemple 6 = Sol ; 23 = porte de fin ; etc...</p></li>
+</ul>
+<p>Contraintes :</p>
+<ul>
+<li><p>Le chemin des ennemis doit impérativement commencer par la gauche et finir sur la droite.</p></li>
+<li><p>Il ne doit y avoir ni division ni croisements dans le chemin à emprunter.</p></li>
+</ul>
+<h2 id="les-fichiers-de-vague">Les fichiers de vague</h2>
+<p>Chaque niveau à un fichier de vague d'ennemis associé s'écrivant sous cette forme :</p>
+<ul>
+<li><p>Première ligne : Nombre de vague</p></li>
+<li>Chaque ligne suivante décrit la vague dans cet ordre :
+<ul>
+<li>Nombre d'ennemi Dragon</li>
+<li>Nombre d'ennemi Squelette</li>
+<li>Nombre d'ennemi Squelette avec chapeau</li>
+<li>Nombre d'ennemi Slime</li>
+<li>Nombre d'ennemi Plante Carnivore</li>
+<li>Nombre d'ennemi Dracaufeu</li>
+<li>Nombre d'ennemi Demon</li>
+<li>Nombre d'ennemi Détraqueur</li>
+</ul></li>
+</ul>
+</body>
+</html>
